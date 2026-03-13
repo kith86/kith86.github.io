@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: #0f172a !important;
+  color: white;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d18a4c;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #272620;
+}
+
+/* =============================
+   Typing effect cursor blink
+============================= */
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+.animate-blink {
+  display: inline-block;
+  animation: blink 1s step-start infinite;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================
+   1. LOGIKA BACKGROUND (Sesuai Keinginanmu)
+   ========================================== */
+
+/* MODE TERANG: Biru Muda */
+html:not(.dark) body, 
+html:not(.dark) section, 
+html:not(.dark) footer,
+html:not(.dark) nav {
+  background-color: #5c7c99 !important;
+}
+
+/* MODE GELAP: Navy (Sesuai Gambar Benar) */
+.dark body, 
+.dark section, 
+.dark footer,
+.dark nav {
+  background-color: #0f172a !important;
+}
+
+/* ==========================================
+   2. LOGIKA TEKS (Tanpa Merusak Ikon Oranye)
+   ========================================== */
+
+/* Kita hanya ubah warna teks yang MEMANG harus berubah, 
+   bukan semua tag 'span' atau 'a' secara membabi buta */
+
+h1, h2, .text-display {
+  color: #f8fafc !important; /* Judul besar selalu putih */
+}
+
+/* Teks di dalam kotak putih/terang (Education/Work/Projects) 
+   HARUS selalu gelap agar tidak silau */
+[class*="bg-white"] h3, [class*="bg-white"] p, [class*="bg-white"] span,
+[class*="bg-gray-50"] h3, [class*="bg-gray-50"] p, [class*="bg-gray-50"] span,
+.bg-white h3, .bg-white p {
+  color: #1e293b !important;
+}
+
+/* ==========================================
+   3. MENYELAMATKAN IKON ORANYE
+   ========================================== */
+
+/* Kita paksa ikon email & lokasi tetap oranye jika mereka punya class oranye */
+.text-orange-400, .text-orange-500, [class*="text-orange-"] {
+  color: #fb923c !important; /* Warna oranye orisinal */
+}
+
+/* ==========================================
+   4. PERBAIKAN TAGS (EDA, SQL, DLL)
+   ========================================== */
+
+/* Agar tags di mode gelap tidak "putih di atas putih" */
+.rounded-full span {
+  color: #1e293b !important; /* Teks tag tetap gelap agar kontras dengan warna pastelnya */
+  font-weight: 600;
+}
+
+/* ==========================================
+   5. LOGO SKILLS
+   ========================================== */
+img[alt*="SQL"], img[alt*="Power BI"], img[alt*="Tableau"] {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  padding: 6px;
+  border-radius: 8px;
+}
