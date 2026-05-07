@@ -23,32 +23,32 @@ const ProjectDetail: React.FC = () => {
   const projects = {
     '1': {
       id: 1,
-      title: 'RevoGrocers Sales Performance Analysis',
+      title: 'RevoFin Loan Portfolio & Risk Analysis',
       description:
-        'Comprehensive SQL-based retail analytics identifying top profit drivers, pricing-to-reach correlations, and repeat purchase patterns to optimize store-wide sales performance.',
+        'Cohort-based risk analysis of 176,087 borrowers ($2.80B portfolio) using SQL, identifying the 2014 cohort anomaly and confirming 3 key risk drivers to strengthen underwriting strategy.',
       image: Method1,
       slideUrl:
-        'https://drive.google.com/file/d/1T9datE_gJZMYSW5Cf0hEHEsE7Wk5u4A6/view?usp=drive_link',
-      duration: '2 Weeks',
+        'https://drive.google.com/file/d/163S3b3mNEWew_ng0WAPYmpHp8nb-cQlH/view?usp=drive_link',
+      duration: '4 Weeks',
       team: 'Individual',
-      tools: ['SQL', 'BigQuery'], 
+      tools: ['SQL', 'BigQuery'],
       details: {
         background:
-          'RevoGrocers sought to optimize its multi-location retail operations by uncovering actionable insights from its transactional data. The analysis focused on identifying high-performing product categories and understanding the relationship between pricing and customer reach. The primary goal was to shift toward a data-driven inventory and pricing strategy to maximize net revenue and improve long-term customer retention',
+          'RevoFin is a fintech company connecting borrowers with personal loan products through a fully digital experience. As the portfolio expanded to over 176,000 customers and $2.80B in outstanding loans, understanding how different borrower cohorts perform over time became critical. This project applies cohort analysis to evaluate lending quality, detect risk anomalies, and uncover the borrower characteristics behind underperforming segments.',
         method: {
           text: '',
           points: [
-            'Scalable Data Processing: Utilized Google BigQuery to process and integrate large-scale retail datasets, performing advanced SQL analytics for revenue and behavior mapping.',
-            'Performance Metrics: Calculated Net Revenue and used SQL Window Functions to identify top-tier customers and cumulative sales trends across different product niches.',
-            'Pricing & Loyalty Analysis: Evaluated the correlation between average unit prices and customer reach, alongside calculating Repeat Purchase Rates to measure category-level loyalty.',
+            'Portfolio Health Assessment: Measured overall portfolio performance using OS (Outstanding), ENR (Earning Not at Risk), and TKB30 (Tingkat Keberhasilan Bayar 30) across all issuance cohorts from 2012–2019.',
+            'Cohort Anomaly Detection: Identified the 2014 cohort as the weakest (TKB30 96.58% vs portfolio average 98.11%) and profiled it against the best cohort (2019, TKB30 98.83%) across 6 borrower dimensions.',
+            'Root Cause Analysis: Examined income, home ownership, employment length, regional distribution, loan purpose, and interest rate to determine which factors are true risk drivers vs. non-significant.',
           ],
         },
         result: {
-          text: 'Key insights and actions included:',
+          text: '',
           points: [
-            'Revenue Optimization: Identified Confections as the dominant revenue driver, contributing 12.87% to total net revenue with an exceptional 99.85% repeat purchase rate, signifying its status as a core "anchor" category.',
-            'Pricing Anomalies: Discovered that the Grain category carries the highest average unit price with the lowest customer reach, while Shellfish captures the highest volume of unique buyers at the lowest price point',
-            'Strategic Actions: Recommended inventory prioritization for high-growth segments (Meat, Poultry, Confections) and suggested a premium pricing strategy for the high-value/low-reach Grain segment to refine margin capture',
+            'Risk Driver Identification: Confirmed 3 key risk drivers — lower borrower income (–13.5%), higher interest rate (+7%), and higher debt consolidation concentration (+5.2%). Ruled out home ownership, employment length, and geography as non-significant.',
+            'Portfolio Concentration: 92% of outstanding balance concentrated in 2016–2019 vintages, with the 2014 cohort requiring prioritized monitoring due to elevated delinquency.',
+            'Actionable Recommendations: Delivered 5 data-driven recommendations including stricter DTI requirements for consolidation loans, income-based risk tiering, interest rate re-evaluation, cohort-level early warning system, and loan purpose diversification caps.',
           ],
         },
       },
@@ -87,35 +87,32 @@ const ProjectDetail: React.FC = () => {
     },
     '3': {
       id: 3,
-      title: 'TokoBli Campaign Evaluation & Product Page Analysis',
+      title: 'QuickU App Funnel Analysis & Cluster Optimization',
       description:
-        'A comprehensive data-driven evaluation of "Twin Date" e-commerce campaigns and A/B testing for product page optimization, focusing on promotional ROI, category performance, and statistical significance.',
+        'End-to-end funnel analysis of 192,524 sessions using BigQuery SQL, identifying 3 critical bottlenecks and building a P0–P3 priority framework with 5-cluster user segmentation.',
       image: Method3,
       slideUrl:
-        'https://drive.google.com/file/d/1vfsWhNZ2hsNRpx9SMQPLkB0oxVok_qBf/view?usp=drive_link',
-      duration: '2 weeks',
+        'https://drive.google.com/file/d/1_atPmeHgOOoAWyveRJbZcSiU89rFtY7K/view?usp=drive_link',
+      duration: '4 Weeks',
       team: 'Individual',
-      tools: ['Google Sheets'],
+      tools: ['SQL', 'BigQuery', 'Tableau'],
       details: {
         background:
-          'TokoBli, E-commerce Industry Application, aimed to evaluate the effectiveness of its digital marketing efforts by analyzing the performance of "Twin Dates" promotional campaigns (10/10, 11/11, and 12/12). Additionally, the project sought to validate a new Product Page design through A/B testing to enhance user experience and increase transaction values. The primary objective was to transition toward a data-driven marketing strategy to maximize promotional ROI and ensure efficient discount allocation.',
+          'QuickU is a fast-growing q-commerce platform whose transaction volume grew 2.6x from 2020 to 2022. Despite strong traffic with 192,524 sessions and 11,102 registered users, overall conversion rate declined every year — from 17% down to 12%. This project analyzed the full user funnel, investigated a cancel rate spike from 15.85% to 39.61%, and segmented users across 5 clusters to identify targeted optimization opportunities.',
         method: {
-          text: 'Conducted a thorough analysis using Google Sheets:',
+          text: '',
           points: [
-            'Data Cleaning & Integrity: Processed a dataset of 10,000+ transactional entries, handling missing values and managing outliers using the Interquartile Range (IQR) method to ensure statistical reliability.',
-            'Efficiency Mapping: Evaluated campaign performance using the Revenue-to-Discount Ratio and a Composite Score to rank the most profitable product categories.',
-            'A/B Testing & Statistical Validation: Conducted Hypothesis Testing (two-tail p-value) to compare the transaction values of the old vs. new Product Page designs, ensuring that the improvements were statistically significant rather than due to chance.',
+            'Funnel Analysis: Mapped the complete 8-stage user journey (Homepage → Complete) using BigQuery SQL, calculating stage-by-stage drop-off rates and identifying the 3 largest friction points.',
+            'Anomaly Investigation: Analyzed the 2022 cancel rate spike through price stability checks, operational capacity assessment, and UTM tracking gap analysis (~36,000 untracked sessions from Instagram & Google).',
+            'User Segmentation: Segmented 11,102 users across 5 clusters — age group, traffic source, transaction value, location, and payment method — to identify which groups have the highest cancel rates and conversion potential.',
           ],
         },
         result: {
           text: '',
           points: [
-            'Campaign Optimization: While the 11/11 campaign generated the highest gross revenue, the 12/12 campaign was identified as the most efficient, achieving a promotional ROI of 58.6x.',
-            'Category Hero: Men Fashion was determined to be the "Winner Category," boasting an impressive ROI of 139.3x during the promotional period.',
-            'Design Validation: The A/B Test results provided statistical evidence that the new Product Page design successfully increased customer transaction values, leading to a recommendation for full-scale implementation',
-            'Full-Scale Rollout: Immediately implement the New Product Page design across all categories, as it is statistically proven to increase transaction values.',
-            'Efficiency Focus: Replicate the 12/12 discount structure for future "Twin Date" events to maintain high ROI without over-discounting.',
-            'Targeted Promotion: Allocate more marketing budget and hero-banner space for the Men Fashion category to maximize profit margins.',
+            'Bottleneck Discovery: Identified 3 critical drops — address page (45.27%, largest single drop, caused by shipping cost shock and no saved address), payment page (31.9%, price shock at confirmation), and post-payment cancellations (30.35%, worsening yearly).',
+            'Data Quality Finding: Uncovered ~36,000 sessions with broken UTM tracking (Instagram & Google), meaning all marketing budget decisions were based on partially inaccurate channel data.',
+            'Priority Framework: Built a P0–P3 action plan — P0: fix UTM tracking immediately, P1: address page UX + payment friction, P2: channel budget reallocation, P3: long-term loyalty programs. Targeting conversion recovery from 13.76% to above 20%.',
           ],
         },
       },
@@ -325,10 +322,10 @@ const ProjectDetail: React.FC = () => {
                 </li>
               </ul>
 
-              {/* Disclaimer – only show for project 2 */}
-              {(id === '2') && (
+              {/* Disclaimer – show for all RevoU projects */}
+              {(id === '1' || id === '2' || id === '3' || id === '4') && (
                 <p className="mt-4 text-xs text-gray-500 italic">
-                  *Disclaimer: The project is a part of RevoU Data Insight Project, a 4-week case study designed to analyze customized datasets and address business challenges. Supervised by RevoU, this project hones analytical skills, strengthens problem-solving abilities, and guides students in delivering actionable insights.
+                  *Disclaimer: This project is a part of RevoU Data Insight Project, a 4-week case study designed to analyze customized datasets and address business challenges. Supervised by RevoU, this project hones analytical skills, strengthens problem-solving abilities, and guides students in delivering actionable insights.
                 </p>
               )}
               </motion.div>

@@ -27,6 +27,10 @@ const tagColors: Record<string, string> = {
   Tableau: "bg-blue-200",
   SQL: "bg-red-200",
   "Performance Metrics": "bg-indigo-200",
+  "Cohort Analysis": "bg-amber-200",
+  "Risk Assessment": "bg-orange-200",
+  "Funnel Analysis": "bg-cyan-200",
+  BigQuery: "bg-yellow-200",
 };
 
 const Projects: React.FC = () => {
@@ -36,12 +40,12 @@ const Projects: React.FC = () => {
   const projects = [
     {
       id: 1,
-      title: 'RevoGrocers Sales Performance Analysis',
-      description: 'Comprehensive SQL-based retail analytics identifying top profit drivers, pricing-to-reach correlations, and repeat purchase patterns to optimize store-wide sales performance.',
-      tags: ['SQL', 'BigQuery', 'Retail Analysis'],
+      title: 'RevoFin Loan Portfolio & Risk Analysis',
+      description: 'Cohort-based risk analysis of 176,087 borrowers ($2.80B portfolio) using SQL, identifying the 2014 cohort anomaly and confirming 3 key risk drivers to strengthen underwriting strategy.',
+      tags: ['SQL', 'Cohort Analysis', 'Risk Assessment'],
       image: Title1,
       slideUrl:
-        'https://drive.google.com/file/d/1T9datE_gJZMYSW5Cf0hEHEsE7Wk5u4A6/view?usp=drive_link',
+        'https://drive.google.com/file/d/163S3b3mNEWew_ng0WAPYmpHp8nb-cQlH/view?usp=drive_link',
     },
     {
       id: 2,
@@ -54,12 +58,12 @@ const Projects: React.FC = () => {
     },
     {
       id: 3,
-      title: 'TokoBli Campaign Evaluation & Product Page Analysis',
-      description: 'A comprehensive data-driven evaluation of "Twin Date" e-commerce campaigns and A/B testing for product page optimization, focusing on promotional ROI, category performance, and statistical significance.',
-      tags: ['A/B Testing', 'E-Commerce Analytics', 'Hypothesis Testing', 'Google Sheets'],
+      title: 'QuickU App Funnel Analysis & Cluster Optimization',
+      description: 'End-to-end funnel analysis of 192,524 sessions using BigQuery SQL, identifying 3 critical bottlenecks and building a P0–P3 priority framework with 5-cluster user segmentation.',
+      tags: ['SQL', 'Funnel Analysis', 'Tableau'],
       image: Title3,
       slideUrl:
-        'https://drive.google.com/file/d/1vfsWhNZ2hsNRpx9SMQPLkB0oxVok_qBf/view?usp=drive_link',
+        'https://drive.google.com/file/d/1_atPmeHgOOoAWyveRJbZcSiU89rFtY7K/view?usp=drive_link',
     },
     {
       id: 4,
@@ -223,7 +227,27 @@ const Projects: React.FC = () => {
             ))}
           </div>
 
-          {/* 🌿 Skills Section di bawah Projects */}
+          {/* More Projects Link */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+            className="text-center mt-10"
+          >
+            <a
+              href="https://kith86.github.io/github-portfolio/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium text-sm transition-all duration-300 ${
+                isDark
+                  ? 'bg-gray-700 text-gray-200 hover:bg-gray-600'
+                  : 'bg-[#c1beaf] text-gray-800 hover:bg-[#b0ad9e]'
+              }`}
+            >
+              View More Projects
+              <ArrowRight className="w-4 h-4" />
+            </a>
+          </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 60 }}
             animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
