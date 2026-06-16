@@ -31,7 +31,7 @@ import powerbiIcon from '../assets/Power bi.jpg';
 const tagColors: Record<string, string> = {
   EDA: "bg-purple-200",
   "Linear Regression": "bg-[#f7c290]",
-  "Clustering Analysis": "bg-pink-200",
+  "Rule-Based Segmentation": "bg-pink-200",
   Python: "bg-[#abddc4]",
   Tableau: "bg-blue-200",
   SQL: "bg-red-200",
@@ -55,7 +55,7 @@ const Projects: React.FC = () => {
       id: 1,
       title: 'Active User Behavior & Segmentation',
       description: 'Conducted in-depth analysis of active user behavior patterns and built a clustering model to understand user characteristics, aiding in targeted engagement and retention strategies.',
-      tags: ['SQL', 'Clustering Analysis', 'EDA'],
+      tags: ['SQL', 'Rule-Based Segmentation', 'EDA'],
       image: OcaUserCover,
       slideUrl: 'https://canva.link/smxdum665pn07yz',
     },
