@@ -4,10 +4,19 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import { useTheme } from '../contexts/ThemeContext';
+
+// Import gambar cover lama
 import Title3 from '../assets/Title3.jpg';
 import Title4 from '../assets/Title4.jpg';
 import Title2 from '../assets/Title2.jpg';
 import Title1 from '../assets/Title1.jpg';
+
+// 🧩 Import gambar cover baru OCA (Pastikan namanya sama persis)
+import OcaUserCover from '../assets/OcaUserSegTitle.jpg';
+import OcaDashboardCover from '../assets/OcaDashboardTitle.jpg';
+import QuickU from '../assets/QuickU.jpg';
+import RevoFin from '../assets/RevoFin.jpg';
+
 
 // 🧩 Import skill icons
 import pythonIcon from '../assets/python.png';
@@ -31,48 +40,64 @@ const tagColors: Record<string, string> = {
   "Risk Assessment": "bg-orange-200",
   "Funnel Analysis": "bg-cyan-200",
   BigQuery: "bg-yellow-200",
+  "Dashboarding": "bg-emerald-200", // Tambahan warna tag baru
+  "React": "bg-sky-200",            // Tambahan warna tag baru
+  "RFM Analysis": "bg-lime-200",    // Tambahan warna tag baru
 };
 
 const Projects: React.FC = () => {
   const [ref, isVisible] = useIntersectionObserver({ threshold: 0.2 });
   const { isDark } = useTheme();
 
+  // Array project yang sudah diupdate menjadi 6
   const projects = [
     {
       id: 1,
-      title: 'RevoFin Loan Portfolio & Risk Analysis',
-      description: 'Cohort-based risk analysis of 176,087 borrowers ($2.80B portfolio) using SQL, identifying the 2014 cohort anomaly and confirming 3 key risk drivers to strengthen underwriting strategy.',
-      tags: ['SQL', 'Cohort Analysis', 'Risk Assessment'],
-      image: Title1,
-      slideUrl:
-        'https://drive.google.com/file/d/163S3b3mNEWew_ng0WAPYmpHp8nb-cQlH/view?usp=drive_link',
+      title: 'Active User Behavior & Segmentation',
+      description: 'Conducted in-depth analysis of active user behavior patterns and built a clustering model to understand user characteristics, aiding in targeted engagement and retention strategies.',
+      tags: ['SQL', 'Clustering Analysis', 'EDA'],
+      image: OcaUserCover,
+      slideUrl: 'https://canva.link/smxdum665pn07yz',
     },
     {
       id: 2,
+      title: 'Unified Channel Performance Dashboard',
+      description: 'Developed a unified analytics dashboard to monitor, track, and visualize performance metrics across multiple communication channels, enabling centralized data-driven decision making.',
+      tags: ['SQL', 'Dashboarding', 'React'],
+      image: OcaDashboardCover,
+      slideUrl: 'https://canva.link/feeh3z944vsy7i5',
+    },
+    {
+      id: 3,
+      title: 'RevoFin Loan Portfolio & Risk Analysis',
+      description: 'Cohort-based risk analysis of 176,087 borrowers ($2.80B portfolio) using SQL, identifying the 2014 cohort anomaly and confirming 3 key risk drivers to strengthen underwriting strategy.',
+      tags: ['SQL', 'Cohort Analysis', 'Risk Assessment'],
+      image: RevoFin,
+      slideUrl: 'https://drive.google.com/file/d/163S3b3mNEWew_ng0WAPYmpHp8nb-cQlH/view?usp=drive_link',
+    },
+    {
+      id: 4,
       title: 'Olist Payment Share & Performance Dashboard',
       description: 'A comprehensive e-commerce analytics project utilizing Python and Tableau to optimize payment method shares, analyze installment impacts on GMV, and map RFM customer segments for targeted growth.',
       tags: ['EDA', 'RFM Analysis', 'Python', 'Tableau'],
       image: Title2,
-      slideUrl:
-        'https://drive.google.com/file/d/13kZzqGCq5SzfjUe9gCiIKadHa2Ffs-5-/view?usp=drive_link',
+      slideUrl: 'https://drive.google.com/file/d/13kZzqGCq5SzfjUe9gCiIKadHa2Ffs-5-/view?usp=drive_link',
     },
     {
-      id: 3,
+      id: 5,
       title: 'QuickU App Funnel Analysis & Cluster Optimization',
       description: 'End-to-end funnel analysis of 192,524 sessions using BigQuery SQL, identifying 3 critical bottlenecks and building a P0–P3 priority framework with 5-cluster user segmentation.',
       tags: ['SQL', 'Funnel Analysis', 'Tableau'],
-      image: Title3,
-      slideUrl:
-        'https://drive.google.com/file/d/1_atPmeHgOOoAWyveRJbZcSiU89rFtY7K/view?usp=drive_link',
+      image: QuickU,
+      slideUrl: 'https://drive.google.com/file/d/1_atPmeHgOOoAWyveRJbZcSiU89rFtY7K/view?usp=drive_link',
     },
     {
-      id: 4,
+      id: 6,
       title: 'Customer Segmentation RevoBank using K-Means',
       description: 'Analysis about RevoBank Customer using K-Means clustering.',
       tags: ['EDA', 'Clustering Analysis', 'Python'],
       image: Title4,
-      slideUrl:
-        'https://drive.google.com/file/d/1OSiRpPLzc0a1d8_EUC5UP-kSQXB5BC_X/view?usp=drive_link',
+      slideUrl: 'https://drive.google.com/file/d/1OSiRpPLzc0a1d8_EUC5UP-kSQXB5BC_X/view?usp=drive_link',
     },
   ];
 
@@ -84,7 +109,7 @@ const Projects: React.FC = () => {
     { name: 'Google Sheets', icon: sheetsIcon },
     { name: 'Microsoft Office', icon: officeIcon },
     { name: 'Web Scraping', icon: webscraperIcon },
-     { name: 'Power BI', icon: powerbiIcon },
+    { name: 'Power BI', icon: powerbiIcon },
   ];
 
   const softSkills = [
@@ -153,9 +178,9 @@ const Projects: React.FC = () => {
               >
                 <div className="relative overflow-hidden">
                   <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-48 object-cover"
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-48 object-contain bg-white dark:bg-slate-800"
                   />
                 </div>
 

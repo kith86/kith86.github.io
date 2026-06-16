@@ -11,10 +11,22 @@ import {
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useTheme } from '../contexts/ThemeContext';
+
+// Import Gambar Asli
+import Method1 from '../assets/Method1.jpg';
+import Method2 from '../assets/Method2.jpg';
 import Method3 from '../assets/Method3.jpg';
 import Method4 from '../assets/Method4.jpg';
-import Method2 from '../assets/Method2.jpg';
-import Method1 from '../assets/Method1.jpg';
+
+
+// Import Gambar Baru (Pastikan namanya sama persis dengan yang ada di folder assets)
+import OcaUserCover from '../assets/OcaUserSegTitle.jpg';
+import OcaDashboardCover from '../assets/OcaDashboardTitle.jpg';
+import Method5 from '../assets/Method5.jpg';
+import Method6 from '../assets/Method6.jpg';
+import QuickU from '../assets/QuickU.jpg';
+import RevoFin from '../assets/RevoFin.jpg';
+
 
 const ProjectDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -23,18 +35,76 @@ const ProjectDetail: React.FC = () => {
   const projects = {
     '1': {
       id: 1,
+      title: 'Active User Behavior & Segmentation',
+      description: 'Conducted in-depth analysis of active user behavior patterns and built a clustering model to understand user characteristics, aiding in targeted engagement and retention strategies.',
+      image: Method5,
+      slideUrl: 'https://canva.link/smxdum665pn07yz',
+      duration: '4 Weeks',
+      team: 'OCA Indonesia',
+      tools: ['BigQuery', 'SQL'],
+      disclaimer: '*Disclaimer: The data provided is a representation of the original data which amount has been adjusted. The data used is NOT representation of original data, adjusted for educational purposes and does not reflect the actual business condition of the company.',
+      details: {
+        background: 'To improve user retention and engagement, OCA Indonesia required a deeper understanding of its active user base. This project involved analyzing behavioral data across 4 channels to identify distinct user segments and their defining characteristics, allowing for more personalized marketing and product strategies.',
+        method: {
+          text: '',
+          points: [
+            'Data Unification: Combined 4 channel tables into a unified transactions dataset using SQL UNION ALL.',
+            'Exploratory Analysis: Analyzed revenue distribution, calculated MoM growth, and examined channel mix, frequency, and active hours.',
+            'Segmentation Design: Implemented a Rule-Based segmentation model evaluating 2 dimensions (Client Value and Growth Trajectory) resulting in 6 targeted segments across 20 clients.'
+          ],
+        },
+        result: {
+          text: '',
+          points: [
+            'Distinct User Profiles: Successfully mapped 20 clients into 6 actionable segments such as "Key Accounts", "Reliable Mid-Tier", and "At-Risk Mid-Tier".',
+            'Targeted Strategies: Defined clear risk levels and treatments for each segment based on their usage intensity and MoM growth.',
+            'Retention Optimization: Laid the groundwork for proactive intervention, especially for the "Declining Small" and "At-Risk" segments.'
+          ],
+        },
+      },
+    },
+    '2': {
+      id: 2,
+      title: 'Unified Channel Performance Dashboard',
+      description: 'Developed a unified analytics dashboard to monitor, track, and visualize performance metrics across multiple communication channels, enabling centralized data-driven decision making.',
+      image: Method6,
+      slideUrl: 'https://canva.link/feeh3z944vsy7i5',
+      duration: '4 Weeks',
+      team: 'OCA Indonesia',
+      tools: ['BigQuery', 'SQL', 'React', 'Recharts'],
+      disclaimer: '*Disclaimer: The data provided is a representation of the original data which amount has been adjusted. The data used is NOT representation of original data, adjusted for educational purposes and does not reflect the actual business condition of the company.',
+      details: {
+        background: 'OCA Indonesia processed 122,749 messages across 4 channels in Q1 2025. Previously, channels were monitored separately with no cross-channel view. This project built an interactive dashboard to consolidate metrics, providing stakeholders with clear insights into channel efficiency and anomaly detection.',
+        method: {
+          text: '',
+          points: [
+            'Data Cleaning: Prepared all datasets by standardizing status labels, handling null values, and fixing date formats via BigQuery SQL.',
+            'Metric Computation: Defined core metrics including Total Messages, Delivery Rate, MoM Volume Trends, and Client Health.',
+            'Dashboard Development: Built an interactive dashboard using React and Recharts, integrating dynamic time periods and channel filters.'
+          ],
+        },
+        result: {
+          text: '',
+          points: [
+            'Centralized Monitoring: Created a unified view for all 4 channels, revealing critical insights such as a 60% decline in Email volume.',
+            'Anomaly Detection: Flagged critical churn signals for two specific clients (-24% and -22% MoM) enabling rapid response.',
+            'Actionable Recommendations: Delivered 5 prioritized actions including investigating the email drop, optimizing blast scheduling, and fixing Call IVR delivery rates.'
+          ],
+        },
+      },
+    },
+    '3': {
+      id: 3,
       title: 'RevoFin Loan Portfolio & Risk Analysis',
-      description:
-        'Cohort-based risk analysis of 176,087 borrowers ($2.80B portfolio) using SQL, identifying the 2014 cohort anomaly and confirming 3 key risk drivers to strengthen underwriting strategy.',
-      image: Method1,
-      slideUrl:
-        'https://drive.google.com/file/d/163S3b3mNEWew_ng0WAPYmpHp8nb-cQlH/view?usp=drive_link',
+      description: 'Cohort-based risk analysis of 176,087 borrowers ($2.80B portfolio) using SQL, identifying the 2014 cohort anomaly and confirming 3 key risk drivers to strengthen underwriting strategy.',
+      image: RevoFin,
+      slideUrl: 'https://drive.google.com/file/d/163S3b3mNEWew_ng0WAPYmpHp8nb-cQlH/view?usp=drive_link',
       duration: '4 Weeks',
       team: 'Individual',
       tools: ['SQL', 'BigQuery'],
+      disclaimer: '*Disclaimer: This project is a part of RevoU Data Insight Project, a 4-week case study designed to analyze customized datasets and address business challenges. Supervised by RevoU, this project hones analytical skills, strengthens problem-solving abilities, and guides students in delivering actionable insights.',
       details: {
-        background:
-          'RevoFin is a fintech company connecting borrowers with personal loan products through a fully digital experience. As the portfolio expanded to over 176,000 customers and $2.80B in outstanding loans, understanding how different borrower cohorts perform over time became critical. This project applies cohort analysis to evaluate lending quality, detect risk anomalies, and uncover the borrower characteristics behind underperforming segments.',
+        background: 'RevoFin is a fintech company connecting borrowers with personal loan products through a fully digital experience. As the portfolio expanded to over 176,000 customers and $2.80B in outstanding loans, understanding how different borrower cohorts perform over time became critical. This project applies cohort analysis to evaluate lending quality, detect risk anomalies, and uncover the borrower characteristics behind underperforming segments.',
         method: {
           text: '',
           points: [
@@ -53,20 +123,18 @@ const ProjectDetail: React.FC = () => {
         },
       },
     },
-    '2': {
-      id: 2,
+    '4': {
+      id: 4,
       title: 'Olist Payment Share & Performance Dashboard',
-      description:
-        'A comprehensive e-commerce analytics project utilizing Python and Tableau to optimize payment method shares, analyze installment impacts on GMV, and map RFM customer segments for targeted growth.',
+      description: 'A comprehensive e-commerce analytics project utilizing Python and Tableau to optimize payment method shares, analyze installment impacts on GMV, and map RFM customer segments for targeted growth.',
       image: Method2,
-      slideUrl:
-        'https://drive.google.com/file/d/13kZzqGCq5SzfjUe9gCiIKadHa2Ffs-5-/view?usp=drive_link',
+      slideUrl: 'https://drive.google.com/file/d/13kZzqGCq5SzfjUe9gCiIKadHa2Ffs-5-/view?usp=drive_link',
       duration: '6 Weeks',
       team: 'Individual',
       tools: ['Google Sheets, Python,Tableau'],
+      disclaimer: '*Disclaimer: This project is a part of RevoU Data Insight Project, a 4-week case study designed to analyze customized datasets and address business challenges. Supervised by RevoU, this project hones analytical skills, strengthens problem-solving abilities, and guides students in delivering actionable insights.',
       details: {
-        background:
-          'Olist, a major Brazilian marketplace ecosystem, sought to optimize its payment portfolio by deeply understanding customer behavior across different payment methods. This project analyzed over 103,000 transactional records to identify value drivers and aimed to increase the Credit Card usage share by 10% within six months. The primary focus was leveraging installment options to boost average order value (GMV) while maintaining a high order completion rate.',
+        background: 'Olist, a major Brazilian marketplace ecosystem, sought to optimize its payment portfolio by deeply understanding customer behavior across different payment methods. This project analyzed over 103,000 transactional records to identify value drivers and aimed to increase the Credit Card usage share by 10% within six months. The primary focus was leveraging installment options to boost average order value (GMV) while maintaining a high order completion rate.',
         method: {
           text: '',
           points: [
@@ -85,20 +153,18 @@ const ProjectDetail: React.FC = () => {
         },
       },
     },
-    '3': {
-      id: 3,
+    '5': {
+      id: 5,
       title: 'QuickU App Funnel Analysis & Cluster Optimization',
-      description:
-        'End-to-end funnel analysis of 192,524 sessions using BigQuery SQL, identifying 3 critical bottlenecks and building a P0–P3 priority framework with 5-cluster user segmentation.',
-      image: Method3,
-      slideUrl:
-        'https://drive.google.com/file/d/1_atPmeHgOOoAWyveRJbZcSiU89rFtY7K/view?usp=drive_link',
+      description: 'End-to-end funnel analysis of 192,524 sessions using BigQuery SQL, identifying 3 critical bottlenecks and building a P0–P3 priority framework with 5-cluster user segmentation.',
+      image: QuickU,
+      slideUrl: 'https://drive.google.com/file/d/1_atPmeHgOOoAWyveRJbZcSiU89rFtY7K/view?usp=drive_link',
       duration: '4 Weeks',
       team: 'Individual',
       tools: ['SQL', 'BigQuery', 'Tableau'],
+      disclaimer: '*Disclaimer: This project is a part of RevoU Data Insight Project, a 4-week case study designed to analyze customized datasets and address business challenges. Supervised by RevoU, this project hones analytical skills, strengthens problem-solving abilities, and guides students in delivering actionable insights.',
       details: {
-        background:
-          'QuickU is a fast-growing q-commerce platform whose transaction volume grew 2.6x from 2020 to 2022. Despite strong traffic with 192,524 sessions and 11,102 registered users, overall conversion rate declined every year — from 17% down to 12%. This project analyzed the full user funnel, investigated a cancel rate spike from 15.85% to 39.61%, and segmented users across 5 clusters to identify targeted optimization opportunities.',
+        background: 'QuickU is a fast-growing q-commerce platform whose transaction volume grew 2.6x from 2020 to 2022. Despite strong traffic with 192,524 sessions and 11,102 registered users, overall conversion rate declined every year — from 17% down to 12%. This project analyzed the full user funnel, investigated a cancel rate spike from 15.85% to 39.61%, and segmented users across 5 clusters to identify targeted optimization opportunities.',
         method: {
           text: '',
           points: [
@@ -117,20 +183,18 @@ const ProjectDetail: React.FC = () => {
         },
       },
     },
-    '4': {
-      id: 4,
+    '6': {
+      id: 6,
       title: 'Customer Segmentation RevoBank using K-Means',
-      description:
-        'Analysis about RevoBank Customer using K-Means clustering for business insights.',
+      description: 'Analysis about RevoBank Customer using K-Means clustering for business insights.',
       image: Method4,
-      slideUrl:
-        'https://drive.google.com/file/d/1OSiRpPLzc0a1d8_EUC5UP-kSQXB5BC_X/view?usp=drive_link',
+      slideUrl: 'https://drive.google.com/file/d/1OSiRpPLzc0a1d8_EUC5UP-kSQXB5BC_X/view?usp=drive_link',
       duration: '3 weeks',
       team: 'Individual',
       tools: ['Python'],
+      disclaimer: '*Disclaimer: This project is a part of RevoU Data Insight Project, a 4-week case study designed to analyze customized datasets and address business challenges. Supervised by RevoU, this project hones analytical skills, strengthens problem-solving abilities, and guides students in delivering actionable insights.',
       details: {
-        background:
-          'RevoBank sought to optimize its credit card portfolio by gaining deep behavioral insights from its diverse customer base. The project involved cleaning and merging disparate user and card datasets to identify distinct risk profiles and spending patterns. The ultimate goal was to move away from "one-size-fits-all" marketing and implement data-driven strategies for revenue growth and risk mitigation.',
+        background: 'RevoBank sought to optimize its credit card portfolio by gaining deep behavioral insights from its diverse customer base. The project involved cleaning and merging disparate user and card datasets to identify distinct risk profiles and spending patterns. The ultimate goal was to move away from "one-size-fits-all" marketing and implement data-driven strategies for revenue growth and risk mitigation.',
         method: {
           text: '',
           points: [
@@ -322,10 +386,10 @@ const ProjectDetail: React.FC = () => {
                 </li>
               </ul>
 
-              {/* Disclaimer – show for all RevoU projects */}
-              {(id === '1' || id === '2' || id === '3' || id === '4') && (
+              {/* Dynamic Disclaimer - otomatis menyesuaikan tiap project */}
+              {project.disclaimer && (
                 <p className="mt-4 text-xs text-gray-500 italic">
-                  *Disclaimer: This project is a part of RevoU Data Insight Project, a 4-week case study designed to analyze customized datasets and address business challenges. Supervised by RevoU, this project hones analytical skills, strengthens problem-solving abilities, and guides students in delivering actionable insights.
+                  {project.disclaimer}
                 </p>
               )}
               </motion.div>
