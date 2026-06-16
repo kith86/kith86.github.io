@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useTheme } from '../contexts/ThemeContext';
-import profile from "../assets/andy.jpg";
+import profile from "../assets/fotoku.jpg";
 
 interface HeroProps {
   scrollToSection: (sectionId: string) => void;

@@ -62,7 +62,7 @@ const About: React.FC = () => {
             {/* Tombol Download CV */}
             <div className="mt-8 flex justify-center lg:justify-start">
             <motion.a
-            href="https://docs.google.com/document/d/1UKBvZS_J0iTsT2JMcULnXEIjV6MnV-md4ieEmLEhyTc/edit?usp=sharing" 
+            href="https://docs.google.com/document/d/1En2m8zkRNYCz6bfgXQKM-csQDbjFlTqoG6YUBPruPo4/edit?usp=drive_link" 
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
